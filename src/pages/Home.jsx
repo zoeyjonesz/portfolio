@@ -6,6 +6,7 @@ import Island from '../models/island';
 import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
+import HomeInfo from '../components/HomeInfo';
 
 const Home = () => {
     const [isRotating, setIsRotating] = useState(false);
@@ -46,7 +47,7 @@ const Home = () => {
         <section className="w-full h-screen relative">
             <div className="absolute top-28 left-0 right-0 z-10 flex
             items-center justify-center">
-                POPUP
+                {currentStage && <HomeInfo currentStage ={currentStage} />}
             </div>
             <Canvas 
                 className={`w-full h-screen bg-transparent ${
